@@ -1,0 +1,22 @@
+import type { KeyboardEvent } from "react";
+const manejarTecla= (evento: KeyboardEvent<HTMLDivElement>) => {
+    if (evento.key === "ArrowUp") {
+        console.log('arriba');
+    }
+    if (evento.key === "ArrowDown") {
+        console.log('abajo');
+    }
+    if (evento.key === "ArrowLeft") {
+        console.log('izquierda');
+    }
+    if (evento.key === "ArrowRight") {
+        console.log('derecha');
+    }
+};
+return (
+    <div tabIndex={0} onKeyDown={manejarTecla}>
+        {/* Tablero de juego */}
+    </div>
+)
+
+onKeyDown se ejecuta cuando se presiona una tecla. La propiedad Key permite identificar cual fue la tecla. El tabIndex permite que el elemento pueda recibir el foco y por tanto los eventos del teclado.  

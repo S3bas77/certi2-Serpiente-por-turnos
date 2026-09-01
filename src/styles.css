@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root { font-family: 'Space Grotesk', sans-serif; color: #17221c; background: #dce9df; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(circle at top right, #f8d89a 0, transparent 34%), #dce9df; }
+button { font: inherit; }
+.game-shell { min-height: 100vh; display: grid; place-items: center; padding: 32px 16px; }
+.game-card { width: min(100%, 620px); padding: clamp(24px, 5vw, 48px); background: #f7f3e9; border: 1px solid #c8d6c6; box-shadow: 12px 12px 0 #a9c1ae; }
+.game-card:focus { outline: 3px solid #f0a43c; outline-offset: 5px; }
+.game-header { border-bottom: 1px solid #c8d6c6; padding-bottom: 22px; }
+.eyebrow { margin: 0 0 10px; color: #397456; font: 500 12px 'DM Mono', monospace; letter-spacing: 1.5px; }
+h1 { margin: 0; font-size: clamp(42px, 9vw, 72px); line-height: .95; letter-spacing: -2px; }
+.instructions { max-width: 350px; margin: 18px 0 0; color: #5d6c61; line-height: 1.5; }
+.score-row { display: flex; align-items: center; gap: 24px; padding: 20px 0; }
+.score-row div { display: grid; gap: 3px; }
+.score-row span { color: #68766b; font: 12px 'DM Mono', monospace; text-transform: uppercase; }
+.score-row strong { font-size: 24px; }
+.score-row button { margin-left: auto; padding: 10px 14px; color: #f7f3e9; background: #397456; border: 0; cursor: pointer; }
+.score-row button:hover { background: #28583f; }
+.board { width: 100%; border-collapse: collapse; border: 7px solid #397456; background: #cde0ce; transition: border-color .2s ease; }
+.board--game-over { border-color: #bd4b42; }
+.cell { width: 12.5%; aspect-ratio: 1; padding: 0; text-align: center; border: 1px solid #a9c8aa; background: #d9ead8; color: #397456; font-size: 24px; }
+.cell:nth-child(even) { background: #d3e5d2; }
+.cell--head { color: #f7f3e9; background: #28583f !important; font-size: 20px; }
+.cell--body { color: #397456; background: #9bc5a1 !important; font-size: 30px; }
+.cell--food { color: #bd4b42; background: #f4d9ab !important; font-size: 24px; }
+.status { margin-top: 18px; color: #397456; font: 500 13px 'DM Mono', monospace; text-align: center; }
+.status--game-over { color: #bd4b42; }
+@media (max-width: 460px) { .game-card { box-shadow: 7px 7px 0 #a9c1ae; } .score-row { gap: 16px; } .score-row button { padding: 9px 10px; } }
