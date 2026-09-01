@@ -20,8 +20,8 @@ Luego abre la URL que muestre Vite (normalmente `http://localhost:5173`). Usa la
 flechas del teclado para mover la serpiente una celda por turno.
 
 El workflow de GitHub Actions publica automáticamente la aplicación en GitHub
-Pages cada vez que se actualiza la rama `main`. En la configuración del
-repositorio, selecciona **Settings > Pages > GitHub Actions** como origen.
+Pages cada vez que se actualiza la rama `main`. La primera vez, habilita Pages
+manualmente en **Settings > Pages** y selecciona **GitHub Actions** como origen.
 
 ## Compilar para producción
 
