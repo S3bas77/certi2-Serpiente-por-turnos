@@ -13,13 +13,6 @@ import {
   type Position,
 } from './game'
 
-const keyDirections: Record<string, Direction> = {
-  ArrowUp: 'up',
-  ArrowDown: 'down',
-  ArrowLeft: 'left',
-  ArrowRight: 'right',
-}
-
 function App() {
   const [snake, setSnake] = useState<Position[]>(INITIAL_SNAKE)
   const [food, setFood] = useState<Food>(INITIAL_FOOD)
@@ -27,8 +20,26 @@ function App() {
   const [turns, setTurns] = useState(0)
 
   function manejarTecla(evento: KeyboardEvent<HTMLDivElement>) {
-    const direction = keyDirections[evento.key]
-    if (!direction || gameOver) return
+    let direction: Direction | null = null
+
+    if (evento.key === 'ArrowUp') {
+      console.log('arriba')
+      direction = 'up'
+    }
+    if (evento.key === 'ArrowDown') {
+      console.log('abajo')
+      direction = 'down'
+    }
+    if (evento.key === 'ArrowLeft') {
+      console.log('izquierda')
+      direction = 'left'
+    }
+    if (evento.key === 'ArrowRight') {
+      console.log('derecha')
+      direction = 'right'
+    }
+
+    if (direction === null || gameOver) return
 
     evento.preventDefault()
     setTurns((currentTurns) => currentTurns + 1)
@@ -58,7 +69,7 @@ function App() {
 
   return (
     <main className="game-shell">
-      <section className="game-card" tabIndex={0} autoFocus onKeyDown={manejarTecla}>
+      <div className="game-card" tabIndex={0} autoFocus onKeyDown={manejarTecla}>
         <header className="game-header">
           <p className="eyebrow">JUEGO POR TURNOS · 8 × 8</p>
           <h1>Serpiente</h1>
@@ -76,7 +87,7 @@ function App() {
         <div className={`status ${gameOver ? 'status--game-over' : ''}`} role="status">
           {gameOver ? 'Fin del juego: la serpiente chocó.' : 'La partida está activa'}
         </div>
-      </section>
+      </div>
     </main>
   )
 }
