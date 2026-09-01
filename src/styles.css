@@ -17,9 +17,9 @@ h1 { margin: 0; font-size: clamp(42px, 9vw, 72px); line-height: .95; letter-spac
 .score-row strong { font-size: 24px; }
 .score-row button { margin-left: auto; padding: 10px 14px; color: #f7f3e9; background: #397456; border: 0; cursor: pointer; }
 .score-row button:hover { background: #28583f; }
-.board { width: 100%; border-collapse: collapse; border: 7px solid #397456; background: #cde0ce; transition: border-color .2s ease; }
+.board { width: 100%; table-layout: fixed; border-collapse: collapse; border: 7px solid #397456; background: #cde0ce; transition: border-color .2s ease; }
 .board--game-over { border-color: #bd4b42; }
-.cell { width: 12.5%; aspect-ratio: 1; padding: 0; text-align: center; border: 1px solid #a9c8aa; background: #d9ead8; color: #397456; font-size: 24px; }
+.cell { width: 12.5%; height: clamp(32px, 11.25vw, 58px); padding: 0; text-align: center; border: 1px solid #a9c8aa; background: #d9ead8; color: #397456; font-size: 24px; }
 .cell:nth-child(even) { background: #d3e5d2; }
 .cell--head { color: #f7f3e9; background: #28583f !important; font-size: 20px; }
 .cell--body { color: #397456; background: #9bc5a1 !important; font-size: 30px; }
